@@ -10,7 +10,8 @@ namespace aoc_2020
         {
             var days = new List<IDay>
             {
-                new Day1()
+                new Day1(),
+                new Day2(),
             };
 
             foreach (var day in days)

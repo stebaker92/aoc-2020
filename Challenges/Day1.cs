@@ -28,8 +28,6 @@ namespace aoc_2020
                 {
                     if (x + y == 2020)
                     {
-                        Console.WriteLine($"Found numbers that add to 2020: {x} + {y}");
-                        Console.WriteLine($"Numbers multiplied are: {x * y}");
                         return x * y;
                     }
                 }
@@ -48,8 +46,6 @@ namespace aoc_2020
                     {
                         if (x + y + z == 2020)
                         {
-                            Console.WriteLine($"Found numbers that add to 2020: {x} + {y} + {z}");
-                            Console.WriteLine($"Numbers multiplied are: {x * y * z}");
                             return x * y * z;
                         }
                     }
