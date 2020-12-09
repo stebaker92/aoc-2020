@@ -13,6 +13,7 @@ namespace aoc_2020
                 new Day1(),
                 new Day2(),
                 new Day3(),
+                new Day4(),
             };
 
             foreach (var day in days)

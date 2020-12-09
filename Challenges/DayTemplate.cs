@@ -11,7 +11,7 @@ namespace aoc_2020
         {
             var lines = File.ReadAllLines("./input/day0");
 
-            var entries = lines.Select(x => int.Parse(x));
+            var entries = lines.Select(x => (x));
 
             return new[]
             {
@@ -20,13 +20,13 @@ namespace aoc_2020
             };
         }
 
-        public int Part1(IEnumerable<int> entries)
+        public int Part1(IEnumerable<string> entries)
         {
 
             throw new Exception("No answer found");
         }
 
-        public int Part2(IEnumerable<int> entries)
+        public int Part2(IEnumerable<string> entries)
         {
 
             throw new Exception("No answer found");
