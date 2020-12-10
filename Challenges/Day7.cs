@@ -16,6 +16,7 @@ namespace aoc_2020
             return new[]
             {
                 Part1(entries).ToString(),
+                Part2(entries).ToString()
             };
         }
 
@@ -45,6 +46,35 @@ namespace aoc_2020
                 .Any();
         }
 
+        private int GetChildBagsCount(Bag bag, Dictionary<string, Bag> allBags)
+        {
+            var childBags = bag.CanHold;
+
+            if (!childBags.Any())
+            {
+                return 0;
+            }
+
+            var count = 0;
+            foreach (var childBag in childBags)
+            {
+                count += childBag.Value;
+                count += GetChildBagsCount(allBags[childBag.Key], allBags) * childBag.Value;
+            }
+
+            return count;
+        }
+
+        public int Part2(IEnumerable<string> entries)
+        {
+            Dictionary<string, Bag> bagCollection = entries.Select(e => Bag.Parse(e)).ToDictionary(bag => bag.Color, bag => bag);
+
+            var goldBag = bagCollection["shiny gold"];
+
+            var count = GetChildBagsCount(goldBag, bagCollection);
+
+            return count;
+        }
 
     }
 }
